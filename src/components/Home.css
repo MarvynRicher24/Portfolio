@@ -1,0 +1,57 @@
+.welcomeTitle {
+    font-size: 4rem; /* Taille du texte */
+    font-weight: bold;
+    text-align: center;
+    color: white; /* Couleur blanche */
+    opacity: 0; /* Initialement invisible */
+    animation: fadeInSlide 2s ease-in-out forwards; /* Animation d'apparition */
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin: 0;
+    padding: 20px;
+    position: relative; /* Nécessaire pour l'effet derrière */
+    z-index: 2; /* Assure que le texte est au-dessus de l'effet */
+  }
+  
+  /* Effet lumineux derrière le titre */
+  .welcomeTitle::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 150%; /* Taille de l'effet */
+    height: 150%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.3), transparent);
+    filter: blur(50px); /* Effet de flou pour la lumière */
+    z-index: -1; /* Place l'effet derrière le texte */
+    animation: pulseEffect 3s infinite; /* Animation pulsante */
+  }
+  
+  /* Animation d'apparition avec glissement */
+  @keyframes fadeInSlide {
+    0% {
+      opacity: 0;
+      transform: translateY(20px); /* Glissement vers le haut */
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0); /* Position finale */
+    }
+  }
+  
+  /* Animation pulsante pour l'effet lumineux */
+  @keyframes pulseEffect {
+    0% {
+      transform: translate(-50%, -50%) scale(1);
+      opacity: 0.6;
+    }
+    50% {
+      transform: translate(-50%, -50%) scale(1.2);
+      opacity: 0.3;
+    }
+    100% {
+      transform: translate(-50%, -50%) scale(1);
+      opacity: 0.6;
+    }
+  }
