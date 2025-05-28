@@ -10,12 +10,9 @@ const Footer = () => {
     <footer className="footer">
       <div className="footer-content">
         <p>©2025 Marvyn Richer</p>
-        <div className="social-icons">
-          <a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub</a>
-          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-        </div>
+
         <button className="back-to-top" onClick={scrollToTop}>
-          ↑ Retour en haut
+          ↑
         </button>
       </div>
     </footer>

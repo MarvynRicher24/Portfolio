@@ -1,23 +1,69 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Skills.css';
 import ParallaxSection from './ParallaxSection';
 import landscape from '../assets/landscape.jpg';
 
 const Skills = () => {
+  const [activeCategory, setActiveCategory] = useState('front-end');
+
+  const skillsData = {
+    'front-end': [
+      { name: 'HTML / CSS', level: '100%' },
+      { name: 'JavaScript / React', level: '60%' },
+      { name: 'Angular / Vue.js', level: '25%' },
+    ],
+    'back-end': [
+      { name: 'PHP / Laravel', level: '50%' },
+      { name: 'Nodejs', level: '30%' },
+      { name: 'C# / Java', level: '50%' },
+    ],
+    'database': [
+      { name: 'SQL / PostgreSQL', level: '60%' },
+      { name: 'Python / R', level: '20%' },
+    ],
+    'methods': [
+      { name: 'Scrum / Kanban', level: '75%' },
+    ],
+  };
+
   return (
     <ParallaxSection id="skills" backgroundImage={landscape} nextSectionId="projects">
       <h1>Mes compétences</h1>
       <div className="skills-buttons">
-        <button>Front-End</button>
-        <button>Back-End</button>
-        <button>Base de données</button>
-        <button>Méthodes</button>
+        <button
+          className={activeCategory === 'front-end' ? 'active' : ''}
+          onClick={() => setActiveCategory('front-end')}
+        >
+          Front-End
+        </button>
+        <button
+          className={activeCategory === 'back-end' ? 'active' : ''}
+          onClick={() => setActiveCategory('back-end')}
+        >
+          Back-End
+        </button>
+        <button
+          className={activeCategory === 'database' ? 'active' : ''}
+          onClick={() => setActiveCategory('database')}
+        >
+          Base de données
+        </button>
+        <button
+          className={activeCategory === 'methods' ? 'active' : ''}
+          onClick={() => setActiveCategory('methods')}
+        >
+          Méthodes
+        </button>
       </div>
       <div className="skills-bars">
-        <div>HTML/CSS <div className="bar" style={{ width: '100%' }}></div></div>
-        <div>JavaScript/React <div className="bar" style={{ width: '60%' }}></div></div>
-        <div>Angular/Vue.js <div className="bar" style={{ width: '20%' }}></div></div>
-        <div>PHP/Laravel <div className="bar" style={{ width: '40%' }}></div></div>
+        {skillsData[activeCategory].map((skill, index) => (
+          <div key={index} className="skill">
+            <span>{skill.name}</span>
+            <div className="bar-container">
+              <div className="bar" style={{ width: skill.level }}></div>
+            </div>
+          </div>
+        ))}
       </div>
     </ParallaxSection>
   );
