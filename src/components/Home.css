@@ -1,57 +1,173 @@
 .welcomeTitle {
-    font-size: 4rem; /* Taille du texte */
-    font-weight: bold;
-    text-align: center;
-    color: white; /* Couleur blanche */
-    opacity: 0; /* Initialement invisible */
-    animation: fadeInSlide 2s ease-in-out forwards; /* Animation d'apparition */
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    margin: 0;
-    padding: 20px;
-    position: relative; /* Nécessaire pour l'effet derrière */
-    z-index: 2; /* Assure que le texte est au-dessus de l'effet */
+  font-size: 4rem;
+  /* Taille du texte */
+  font-weight: bold;
+  text-align: center;
+  color: white;
+  /* Couleur blanche */
+  opacity: 0;
+  /* Initialement invisible */
+  animation: fadeInSlide 2s ease-in-out forwards;
+  /* Animation d'apparition */
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin: 0;
+  padding: 20px;
+  position: relative;
+  /* Nécessaire pour l'effet derrière */
+  z-index: 2;
+  /* Assure que le texte est au-dessus de l'effet */
+}
+
+/* Effet lumineux derrière le titre */
+.homeContainer::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 150%;
+  /* Taille de l'effet */
+  height: 100%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.3), transparent);
+  filter: blur(50px);
+  /* Effet de flou pour la lumière */
+  z-index: -1;
+  /* Place l'effet derrière le texte */
+  animation: pulseEffect 3s infinite;
+  /* Animation pulsante */
+}
+
+/* Animation d'apparition avec glissement */
+@keyframes fadeInSlide {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+    /* Glissement vers le haut */
   }
-  
-  /* Effet lumineux derrière le titre */
-  .welcomeTitle::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 150%; /* Taille de l'effet */
-    height: 150%;
-    background: radial-gradient(circle, rgba(255, 255, 255, 0.3), transparent);
-    filter: blur(50px); /* Effet de flou pour la lumière */
-    z-index: -1; /* Place l'effet derrière le texte */
-    animation: pulseEffect 3s infinite; /* Animation pulsante */
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    /* Position finale */
   }
-  
-  /* Animation d'apparition avec glissement */
-  @keyframes fadeInSlide {
-    0% {
-      opacity: 0;
-      transform: translateY(20px); /* Glissement vers le haut */
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0); /* Position finale */
-    }
+}
+
+/* Animation pulsante pour l'effet lumineux */
+@keyframes pulseEffect {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1.5;
   }
-  
-  /* Animation pulsante pour l'effet lumineux */
-  @keyframes pulseEffect {
-    0% {
-      transform: translate(-50%, -50%) scale(1);
-      opacity: 0.6;
-    }
-    50% {
-      transform: translate(-50%, -50%) scale(1.2);
-      opacity: 0.3;
-    }
-    100% {
-      transform: translate(-50%, -50%) scale(1);
-      opacity: 0.6;
-    }
+
+  50% {
+    transform: translate(-50%, -50%) scale(1.2);
+    opacity: 0.5;
   }
+
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+}
+
+/* Subtitle */
+
+.homeDescription {
+  background: rgba(30, 32, 38, 0.32);
+  /* Fond transparent moderne */
+  border-radius: 16px;
+  padding: 1.2em 2em;
+  display: inline-block;
+  margin: 0 auto 0.7em auto;
+  box-shadow: 0 2px 12px rgba(80, 80, 120, 0.08);
+  opacity: 0;
+  animation: homeDescriptionFadeIn 2s ease 1.5s forwards;
+  transition: background 0.3s;
+  cursor: none;
+  transition:
+    padding 1s,
+    box-shadow 1s,
+}
+
+.homeDescription:hover {
+  padding: 2rem 5rem;
+  box-shadow: 0 0px 16px #00bcd4a0;
+}
+
+@keyframes homeDescriptionFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.homeSubtitle {
+  background: none;
+  box-shadow: none;
+  padding: 0;
+  margin: 0;
+  font-size: 2.1rem;
+  font-weight: 500;
+  color: #f5f6fa;
+  letter-spacing: 1.2px;
+  text-align: center;
+  opacity: 1;
+  filter: none;
+  transform: none;
+  animation: none;
+  transition: color 0.3s;
+}
+
+/* Responsive Home */
+@media (max-width: 900px) {
+  .welcomeTitle {
+    font-size: 2.2rem;
+    padding: 10px;
+  }
+
+  .homeContainer {
+    padding: 0 10px;
+  }
+
+  .homeDescription {
+    padding: 1em 0.7em;
+    font-size: 1.1rem;
+    border-radius: 12px;
+    margin: 0 auto 0.7em auto;
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+  }
+
+  .homeSubtitle {
+    font-size: 1.3rem;
+    padding: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .welcomeTitle {
+    font-size: 1.3rem;
+    padding: 6px;
+    letter-spacing: 1px;
+  }
+
+  .homeDescription {
+    padding: 0.7em 0.3em;
+    font-size: 1rem;
+    border-radius: 8px;
+    width: 100%;
+    min-width: 0;
+  }
+
+  .homeSubtitle {
+    font-size: 1.05rem;
+    padding: 0;
+  }
+}

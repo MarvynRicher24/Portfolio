@@ -1,0 +1,364 @@
+.about-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 48px;
+    margin: 48px auto 0 auto;
+    max-width: 1100px;
+    width: 92%;
+    background: rgba(0, 0, 0, 0.28);
+    border-radius: 24px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+    padding: 48px 36px;
+    backdrop-filter: blur(2px);
+}
+
+.about-left {
+    flex: 1.3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Ajouté pour centrer horizontalement */
+    gap: 28px;
+    color: #fff;
+    font-size: 1.18rem;
+    line-height: 1.7;
+    background: rgba(255, 255, 255, 0.07);
+    border-radius: 18px;
+    padding: 32px 24px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.10);
+    position: relative;
+    min-width: 0;
+    text-align: center;
+    /* Centre aussi le texte */
+    flex-direction: column;
+    /* Pour empiler la photo et le texte verticalement */
+}
+
+.about-photo {
+    flex-shrink: 0;
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #e2fffa;
+    box-shadow: 0 4px 24px rgba(0, 188, 212, 0.10);
+    background: #222;
+    transition: box-shadow 0.3s, transform 0.3s;
+    cursor: zoom-in;
+}
+
+.about-photo,
+.about-photo.zoomed {
+    transition: box-shadow 0.3s, transform 0.3s;
+}
+
+.about-left:hover .about-photo {
+    box-shadow: 0 8px 32px #00bcd4a0, 0 2px 12px rgba(0, 188, 212, 0.10);
+}
+
+.photo-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(10, 18, 24, 0.92);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+    animation: modalFadeIn 0.3s;
+    cursor: zoom-out;
+}
+
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.photo-modal-img {
+    max-width: 90vw;
+    max-height: 90vh;
+    border-radius: 18px;
+    box-shadow: 0 8px 48px #00bcd4a0, 0 2px 12px rgba(0, 188, 212, 0.10);
+    border: 4px solid #e2fffa;
+    background: #222;
+    animation: photoZoomIn 0.35s cubic-bezier(.22, 1.2, .36, 1);
+}
+
+@keyframes photoZoomIn {
+    from {
+        transform: scale(0.7);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.about-description {
+    flex: 1;
+    z-index: 1;
+    font-size: 1.18rem;
+    color: #fff;
+    transition: color 0.3s;
+}
+
+.about-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+.about-card {
+    background: rgba(255, 255, 255, 0.13);
+    border-radius: 18px;
+    padding: 26px 22px;
+    color: #fff;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.10);
+    position: relative;
+    overflow: hidden;
+    transition:
+        transform 0.35s cubic-bezier(.22, 1.2, .36, 1),
+        box-shadow 0.25s,
+        background 0.25s,
+        color 0.25s;
+    will-change: transform, box-shadow, background;
+    cursor: pointer;
+}
+
+.about-card::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 0;
+    height: 0;
+    background: radial-gradient(circle, rgba(0, 188, 212, 0.10) 0%, transparent 80%);
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: width 0.5s cubic-bezier(.22, 1.2, .36, 1), height 0.5s cubic-bezier(.22, 1.2, .36, 1), opacity 0.4s;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.about-card:hover {
+    transform: scale(1.08) rotate(-1.2deg);
+    box-shadow: 0 12px 40px 0 #00bcd4a0, 0 2px 16px 0 rgba(0, 0, 0, 0.10);
+    background: #e2fffa;
+    color: #222;
+}
+
+.about-card:hover::before {
+    width: 260%;
+    height: 260%;
+    opacity: 1;
+}
+
+.about-card h2,
+.about-card p {
+    position: relative;
+    z-index: 1;
+    transition: font-size 0.28s cubic-bezier(.22, 1.2, .36, 1), color 0.25s;
+}
+
+.about-card h2 {
+    font-size: 1.18rem;
+    margin-bottom: 10px;
+    color: inherit;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
+.about-card p {
+    font-size: 1.01rem;
+    color: inherit;
+}
+
+.about-card:hover h2 {
+    color: #00bcd4;
+}
+
+.about-card:hover p {
+    color: #222;
+}
+
+.about-card:active {
+    transform: scale(0.98) rotate(0deg);
+    box-shadow: 0 2px 8px rgba(0, 188, 212, 0.10);
+}
+
+/* Boutons pour le CV */
+
+.about-cv-buttons {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.about-cv-btn {
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid #e2fffa;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 10px 22px;
+    border-radius: 25px;
+    cursor: pointer;
+    text-decoration: none;
+    box-shadow: 0 2px 12px rgba(80, 80, 120, 0.08);
+    transition:
+        background 0.3s,
+        color 0.3s,
+        box-shadow 0.3s,
+        transform 0.3s;
+    display: inline-block;
+}
+
+.about-cv-btn:hover {
+    background: #e2fffa;
+    color: #00bcd4;
+    box-shadow: 0 4px 16px #00bcd4a0;
+    transform: scale(1.08);
+}
+
+/* Responsive About Section Optimisée */
+/* À placer à la fin de src/components/About.css */
+
+@media (max-width: 900px) {
+
+    /* Cache le titre principal pour gagner de l'espace */
+    #about h1 {
+        display: none;
+    }
+
+    .about-container {
+        flex-direction: column;
+        gap: 18px;
+        padding: 18px 4vw;
+        max-width: 100vw;
+        border-radius: 12px;
+        margin-top: 18px;
+        box-shadow: none;
+        background: none;
+    }
+
+    .about-left,
+    .about-right {
+        width: 100%;
+        padding: 0;
+        border-radius: 10px;
+        box-shadow: none;
+        background: none;
+    }
+
+    .about-left {
+        align-items: center;
+        text-align: center;
+        gap: 12px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid rgba(226, 255, 250, 0.08);
+    }
+
+    .about-photo {
+        width: 70px;
+        height: 70px;
+        margin-bottom: 6px;
+    }
+
+    .about-description {
+        font-size: 1rem;
+        padding: 0 2vw;
+    }
+
+    .about-cv-buttons {
+        flex-direction: row !important;
+        gap: 10px;
+        justify-content: center;
+        align-items: center;
+        margin-top: 10px;
+    }
+
+    .about-cv-btn {
+        font-size: 0.95rem;
+        padding: 8px 14px;
+    }
+
+    .about-right {
+        gap: 12px;
+        margin-top: 10px;
+    }
+
+    .about-card {
+        background: none;
+        box-shadow: none;
+        border-radius: 10px;
+        padding: 10px 2vw;
+        font-size: 0.97rem;
+        border: 1px solid rgba(226, 255, 250, 0.10);
+        transition: background 0.3s, box-shadow 0.3s;
+    }
+
+    .about-card h2 {
+        font-size: 1.02rem;
+        margin-bottom: 6px;
+    }
+
+    .about-card p {
+        font-size: 0.97rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .about-container {
+        padding: 6px 1vw;
+        gap: 8px;
+        border-radius: 6px;
+    }
+
+    .about-left,
+    .about-right {
+        padding: 0;
+        border-radius: 6px;
+    }
+
+    .about-photo {
+        width: 48px;
+        height: 48px;
+    }
+
+    .about-description {
+        font-size: 0.93rem;
+        padding: 0 1vw;
+    }
+
+    .about-card {
+        padding: 6px 1vw;
+        font-size: 0.93rem;
+        border-radius: 6px;
+    }
+
+    .about-card h2 {
+        font-size: 0.95rem;
+    }
+
+    .about-card p {
+        font-size: 0.93rem;
+    }
+
+    .about-cv-btn {
+        font-size: 0.9rem;
+        padding: 7px 10px;
+    }
+}

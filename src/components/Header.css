@@ -1,64 +1,202 @@
 .header {
-    background-color: rgb(3, 3, 3, 0.9);
-    position: fixed;
-    top: 0;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem;
-    color: white;
-    z-index: 1000;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-    transition: background 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  .header-logo {
-    font-size: 20px;
-    font-weight: bold;
-    letter-spacing: 1.5px;
-    cursor: pointer;
-    margin-left: 5rem;
+  background-color: rgb(3, 3, 3, 0.9);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  color: white;
+  z-index: 1000;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.header-logo {
+  font-size: 20px;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+  cursor: pointer;
+  margin-left: 5rem;
+}
+
+.header-logo:hover {
+  color: #e2fffa;
+}
+
+.header-nav {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-link {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  position: relative;
+  transition: color 0.3s ease, transform 0.3s ease;
+  margin-right: 5rem;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: -60%;
+  width: 0;
+  height: 1.5px;
+  background: #00bcd4a0;
+  transition: width 0.3s ease, left 0.3s ease;
+  transform: translateX(50%);
+}
+
+.nav-link:hover {
+  color: #e2fffa;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+/* Burger menu */
+.burger-menu {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1201;
+  margin-left: 1rem;
+  margin-right: 3rem;
+}
+
+.burger-menu span {
+  display: block;
+  height: 4px;
+  width: 28px;
+  margin: 4px 0;
+  background: #e2fffa;
+  border-radius: 2px;
+  transition: 0.4s;
+}
+
+.burger-menu.open span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.burger-menu.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.burger-menu.open span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Overlay pour fermer le menu */
+.nav-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.55);
+  z-index: 1200;
+  animation: fadeIn 0.3s;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
   }
 
-  .header-logo:hover {
-    color: #e2fffa;
+  to {
+    opacity: 1;
   }
-  
+}
+
+/* Menu mobile caché par défaut */
+.mobile-nav {
+  display: none;
+}
+
+.mobile-nav.show {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: auto;
+  width: auto;
+  max-width: 320px;
+  background: rgba(30, 32, 38, 0.98);
+  box-shadow: -2px 0 24px #00bcd4a0;
+  align-items: flex-start;
+  padding: 4.5rem 2rem 2rem 2rem;
+  gap: 20px;
+  z-index: 1202;
+  border-top-left-radius: 24px;
+  border-bottom-left-radius: 24px;
+  animation: slideInMenu 0.3s;
+  margin-top: 10rem;
+}
+
+@keyframes slideInMenu {
+  from {
+    right: -100vw;
+  }
+
+  to {
+    right: 0;
+  }
+}
+
+.mobile-nav .nav-link {
+  width: 100%;
+  text-align: left;
+  font-size: 1.1rem;
+  padding: 14px 0;
+  border-radius: 10px;
+  margin: 0;
+  background: none;
+  color: #e2fffa;
+  box-shadow: none;
+  transition: background 0.3s, color 0.3s, transform 0.3s;
+}
+
+.mobile-nav .nav-link:hover,
+.mobile-nav .nav-link:focus {
+  background: #e2fffa;
+  color: #00bcd4;
+  transform: scale(1.04);
+}
+
+.mobile-nav .nav-link::after {
+  display: none;
+}
+
+/* Responsive : affiche le burger et cache la nav classique */
+@media (max-width: 900px) {
   .header-nav {
+    display: none;
+  }
+
+  .burger-menu {
     display: flex;
-    gap: 20px;
   }
-  
-  .nav-link {
-    background: none;
-    border: none;
-    color: white;
-    font-size: 14px;
-    font-weight: bold;
-    cursor: pointer;
-    position: relative;
-    transition: color 0.3s ease, transform 0.3s ease;
-    margin-right: 5rem;
+
+  .mobile-nav {
+    display: none;
   }
-  
-  .nav-link::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: -60%;
-    width: 0;
-    height: 1.5px;
-    background: #e2fffa;
-    transition: width 0.3s ease, left 0.3s ease;
-    transform: translateX(50%);
+
+  .mobile-nav.show {
+    display: flex;
   }
-  
-  .nav-link:hover {
-    color: #e2fffa;
-  }
-  
-  .nav-link:hover::after {
-    width: 100%;
-    left: 0;
-  }
+}

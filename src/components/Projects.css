@@ -1,82 +1,131 @@
 /* Section globale */
 .carousel {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    margin: 20px 0;
-  }
-  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin: 20px 0;
+}
+
+.carousel:hover {
+  box-shadow: 0 0px 14px #00bcd4a0;
+  border-radius: 15px;
+}
+
+.carousel-content {
+  width: 40rem;
+  height: 20rem;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  background: rgba(255, 255, 255, 0.1);
+  transition: transform 0.3s ease;
+  position: relative;
+}
+
+.carousel-content img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-bottom: 2px solid #e2fffa;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.carousel-content img:hover {
+  transform: scale(1.08);
+  filter: brightness(1.15);
+  box-shadow: 0 8px 32px #00bcd4a0;
+}
+
+.carousel-content p {
+  margin: 10px 0;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.carousel-button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.carousel-button:hover {
+  color: #00bcd4;
+  transform: scale(1.5);
+}
+
+.carousel-button.prev {
+  position: absolute;
+  left: -60px;
+}
+
+.carousel-button.next {
+  position: absolute;
+  right: -60px;
+}
+
+.github-button {
+  display: inline-block;
+  margin-top: 1rem;
+  text-decoration: none;
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid #e2fffa;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.github-button:hover {
+  background: white;
+  color: #00bcd4;
+  transform: scale(1.1);
+  box-shadow: 0 4px 16px #00bcd4a0;
+}
+
+/* Responsive Projects Section : swipe sur mobile, flèches cachées */
+/* À placer à la fin de src/components/Projects.css */
+
+@media (max-width: 900px) {
   .carousel-content {
-    width: 400px; /* Augmentation de la taille */
-    height: 300px; /* Augmentation de la taille */
-    overflow: hidden;
-    border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-    text-align: center;
-    background: rgba(255, 255, 255, 0.1);
-    transition: transform 0.3s ease;
-    position: relative;
+    width: 90vw;
+    height: 200px;
+    min-width: 0;
+    max-width: 100vw;
   }
-  
-  .carousel-content img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-bottom: 2px solid #e2fffa;
-    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+@media (max-width: 600px) {
+  .carousel {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 10px;
+    -webkit-overflow-scrolling: touch;
   }
-  
-  .carousel-content img:hover {
-    transform: scale(1.1); /* Zoom au survol */
-    filter: brightness(1.2); /* Augmente la luminosité */
+
+  .carousel-content {
+    min-width: 260px;
+    width: 85vw;
+    max-width: 320px;
+    height: 160px;
+    border-radius: 12px;
+    scroll-snap-align: center;
+    flex-shrink: 0;
+    margin: 0 8px;
   }
-  
-  .carousel-content p {
-    margin: 10px 0;
-    color: white;
-    font-size: 18px;
-    font-weight: bold;
-  }
-  
-  .carousel-button {
-    background: none;
-    border: none;
-    color: white;
-    font-size: 2rem;
-    cursor: pointer;
-    transition: color 0.3s ease;
-  }
-  
-  .carousel-button:hover {
-    color: #e2fffa;
-  }
-  
-  .carousel-button.prev {
-    position: absolute;
-    left: -60px;
-  }
-  
+
+  /* Cache les flèches sur mobile */
+  .carousel-button,
+  .carousel-button.prev,
   .carousel-button.next {
-    position: absolute;
-    right: -60px;
+    display: none !important;
   }
-  
-  .github-button {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 10px 20px;
-    background: #e2fffa;
-    color: black;
-    font-size: 16px;
-    font-weight: bold;
-    text-decoration: none;
-    border-radius: 25px;
-    transition: all 0.3s ease;
-  }
-  
-  .github-button:hover {
-    background: white;
-    color: #00bcd4;
-    transform: scale(1.1);
-  }
+}

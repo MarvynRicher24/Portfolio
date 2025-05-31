@@ -15,7 +15,7 @@ const Contact = () => {
 
   return (
     <ParallaxSection id="contact" backgroundImage={cave}>
-      <h1>Contact</h1>
+      <h1>Me Contacter</h1>
       <p className="contact-description">
         Vous souhaitez me contacter ou en savoir plus ? N'hésitez pas à utiliser les liens ci-dessous.
       </p>
