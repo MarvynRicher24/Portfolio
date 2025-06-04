@@ -3,6 +3,8 @@ import './Projects.css';
 import ParallaxSection from './ParallaxSection';
 import road from '../assets/road.jpg';
 import project from '../assets/project.jpg';
+import keeppeek from '../assets/keeppeek.jpg';
+import fastplaneco from '../assets/fastplaneco.jpg';
 
 
 const Projects = () => {
@@ -11,10 +13,9 @@ const Projects = () => {
 
   const projects = [
     { image: project, title: 'Projet 1', link: 'https://github.com/MarvynRicher24/NewesOnline' },
-    { image: project, title: 'Projet 2', link: 'https://github.com/MarvynRicher24/Application-planification-map' },
-    { image: project, title: 'Projet 3', link: 'https://github.com/MarvynRicher24/KeepPeek' },
+    { image: fastplaneco, title: 'fastplaneco', link: 'https://fastplaneco.marvynricher.com' },
+    { image: keeppeek, title: 'keeppeek', link: 'https://keeppeek.marvynricher.com' },
     { image: project, title: 'Projet 4', link: 'https://github.com/MarvynRicher24/Angular-Website-Project' },
-    { image: project, title: 'Projet 5', link: '#' },
   ];
 
   const handleNext = () => {
