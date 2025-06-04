@@ -79,8 +79,6 @@
 /* Sur les écrans “étroits” (téléphones, petite tablette) */
 @media screen and (max-width: 768px) {
   .parallax {
-    /* On désactive le fixed pour de meilleures perf. et compatibilité mobile */
-    background-attachment: scroll;
     /* On peut réduire un peu la hauteur si besoin */
     min-height: 70vh;
   }
