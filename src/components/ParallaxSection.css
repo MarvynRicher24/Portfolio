@@ -28,6 +28,8 @@
   position: relative;
   z-index: 2;
   animation: fadeIn 1.5s ease-in-out;
+  padding: 0 1rem; /* un peu d’air sur les côtés en mobile */
+  max-width: 100%;
 }
 
 .down-arrow {
@@ -71,5 +73,37 @@
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+/* Sur les écrans “étroits” (téléphones, petite tablette) */
+@media screen and (max-width: 768px) {
+  .parallax {
+    /* On désactive le fixed pour de meilleures perf. et compatibilité mobile */
+    background-attachment: scroll;
+    /* On peut réduire un peu la hauteur si besoin */
+    min-height: 70vh;
+  }
+
+  .content {
+    /* Corps de texte plus compact */
+    padding: 0 1rem;
+  }
+
+  .down-arrow {
+    font-size: 1.5rem;
+    bottom: 15px;
+  }
+}
+
+/* Sur écrans très petits (portrait de mobile) */
+@media screen and (max-width: 480px) {
+  .parallax {
+    min-height: 60vh;
+  }
+
+  .down-arrow {
+    font-size: 1.2rem;
+    bottom: 10px;
   }
 }
