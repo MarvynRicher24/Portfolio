@@ -22,7 +22,7 @@
 }
 
 .header-logo:hover {
-  color: #e2fffa;
+  color: #006572;
 }
 
 .header-nav {
@@ -49,13 +49,13 @@
   left: -60%;
   width: 0;
   height: 1.5px;
-  background: #006572;
+  background: #fff;
   transition: width 0.3s ease, left 0.3s ease;
   transform: translateX(50%);
 }
 
 .nav-link:hover {
-  color: #e2fffa;
+  color: #006572;
 }
 
 .nav-link:hover::after {
@@ -174,7 +174,7 @@
 .mobile-nav .nav-link:hover,
 .mobile-nav .nav-link:focus {
   background: #e2fffa;
-  color: #00bcd4;
+  color: #006572;
   transform: scale(1.04);
 }
 

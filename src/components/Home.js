@@ -1,7 +1,7 @@
 import React from 'react';
 import './Home.css';
 import ParallaxSection from './ParallaxSection';
-import spaceImage from '../assets/space.jpg'; // Chemin corrigé
+import spaceImage from '../assets/space1.jpg'; // Chemin corrigé
 
 const Home = () => {
   return (

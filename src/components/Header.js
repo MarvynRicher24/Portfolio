@@ -26,6 +26,7 @@ const Header = () => {
       <nav className="header-nav">
         <button onClick={() => handleScroll('home')} className="nav-link">Accueil</button>
         <button onClick={() => handleScroll('about')} className="nav-link">À propos</button>
+        <button onClick={() => handleScroll('domains')} className="nav-link">Domaines</button>
         <button onClick={() => handleScroll('skills')} className="nav-link">Compétences</button>
         <button onClick={() => handleScroll('projects')} className="nav-link">Projets</button>
         <button onClick={() => handleScroll('contact')} className="nav-link">Contact</button>

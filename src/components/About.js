@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './About.css';
 import ParallaxSection from './ParallaxSection';
-import skyImage from '../assets/sky.jpg';
+import orbit from '../assets/orbit.jpg';
 import moi from '../assets/moi.jpg';
 import cv from '../assets/CV.pdf';
 
@@ -9,8 +9,8 @@ const About = () => {
   const [photoZoom, setPhotoZoom] = useState(false);
 
   return (
-    <ParallaxSection id="about" backgroundImage={skyImage} nextSectionId="skills">
-      <h1>À propos de moi :</h1>
+    <ParallaxSection id="about" backgroundImage={orbit} nextSectionId="domains">
+      <h1>Qui suis-je ?</h1>
       <div className="about-container">
         <div className="about-left">
           <img
@@ -43,22 +43,6 @@ const About = () => {
                 Télécharger mon CV
               </a>
             </div>
-          </div>
-        </div>
-        <div className="about-right">
-          <div className="about-card">
-            <h2>Full Stack Développement</h2>
-            <p>
-              Pendant mon cursus, j'ai appris à développer des applications, des sites web, des logiciels.
-              En plus de maîtriser certaines technologies et d'aimer en découvrir de nouvelles, je recherche toujours à améliorer mes compétences en développement.
-            </p>
-          </div>
-          <div className="about-card">
-            <h2>Management de projet</h2>
-            <p>
-              J'ai également acquis des compétences en gestion de projet, ce qui me permet de coordonner efficacement les équipes et de garantir la réussite des projets.
-              Je suis capable de planifier, d'organiser et de superviser les différentes étapes d'un projet pour atteindre les objectifs fixés.
-            </p>
           </div>
         </div>
       </div>

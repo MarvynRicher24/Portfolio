@@ -1,0 +1,174 @@
+   .about-domain {
+       display: flex;
+       justify-content: center;
+       align-items: flex-start;
+       gap: 48px;
+       margin: 48px auto 0 auto;
+       max-width: 1100px;
+       width: 92%;
+       background: rgba(0, 0, 0, 0.28);
+       border-radius: 24px;
+       box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+       padding: 36px 36px;
+       backdrop-filter: blur(2px);
+       flex-wrap: wrap;
+       /* pour empilement sur plus petits écrans */
+       transition: padding 0.3s ease, gap 0.3s ease;
+   }
+
+   .about-right {
+       flex: 1 1 300px;
+       /* croissance 1, base 300px */
+       display: flex;
+       flex-direction: column;
+       gap: 28px;
+   }
+
+   /* Domains */
+   .about-dev, .about-project {
+       background: rgba(255, 255, 255, 0.13);
+       border-radius: 18px;
+       padding: 26px 22px;
+       color: #fff;
+       box-shadow: 0 2px 12px rgba(0, 0, 0, 0.10);
+       position: relative;
+       overflow: hidden;
+       transition:
+           transform 0.35s cubic-bezier(.22, 1.2, .36, 1),
+           box-shadow 0.25s,
+           background 0.25s,
+           color 0.25s;
+       will-change: transform, box-shadow, background;
+       cursor: default;
+   }
+
+   .about-dev:hover {
+       transform: scale(1.05) rotate(-0.5deg);
+       box-shadow: 0 12px 40px 0 #00bcd4a0, 0 2px 16px 0 rgba(0, 0, 0, 0.10);
+       background: #e2fffa;
+       color: #222;
+   }
+
+   .about-project:hover {
+    transform: scale(1.05) rotate(0.5deg);
+    box-shadow: 0 12px 40px 0 #00bcd4a0, 0 2px 16px 0 rgba(0, 0, 0, 0.10);
+    background: #e2fffa;
+    color: #222;
+}
+
+   .about-dev h2, .about-project h2 {
+       font-size: 1.18rem;
+       margin-bottom: 10px;
+       letter-spacing: 1px;
+       font-weight: 600;
+       transition: color 0.25s ease;
+   }
+
+   .about-dev p, .about-project p {
+       font-size: 1.01rem;
+       line-height: 1.6;
+       transition: color 0.25s ease;
+   }
+
+   .about-dev:hover h2, .about-project:hover h2 {
+       color: #006572;
+   }
+
+   .about-dev:hover p, .about-project:hover p {
+       color: #222;
+   }
+
+   /* Responsive */
+   @media (max-width: 900px) {
+       .about-domain {
+           flex-direction: column;
+           gap: 24px;
+           padding: 24px 4vw;
+           max-width: 100vw;
+           border-radius: 16px;
+           margin-top: 24px;
+           box-shadow: none;
+           background: none;
+       }
+
+       .about-right {
+           width: 100%;
+           padding: 0;
+           border-radius: 12px;
+           box-shadow: none;
+           background: none;
+           gap: 20px;
+       }
+
+       .about-dev, .about-project {
+           background: none;
+           box-shadow: none;
+           border-radius: 12px;
+           padding: 18px 2vw;
+           font-size: 0.97rem;
+           border: 1px solid rgba(226, 255, 250, 0.10);
+           transition: background 0.3s, box-shadow 0.3s;
+       }
+
+       .about-dev h2, .about-project h2 {
+           font-size: 1.05rem;
+           margin-bottom: 8px;
+       }
+
+       .about-dev p, .about-project p {
+           font-size: 0.95rem;
+       }
+   }
+
+   @media (max-width: 600px) {
+       .about-domain {
+           padding: 12px 2vw;
+           gap: 12px;
+           border-radius: 8px;
+       }
+
+       .about-right {
+           padding: 0;
+           border-radius: 8px;
+           gap: 12px;
+       }
+
+       .about-dev, .about-project {
+           padding: 12px 1.5vw;
+           font-size: 0.93rem;
+           border-radius: 6px;
+           border: 1px solid rgba(226, 255, 250, 0.08);
+       }
+
+       .about-dev h2, .about-project h2 {
+           font-size: 0.95rem;
+           margin-bottom: 6px;
+       }
+
+       .about-dev p, .about-project p {
+           font-size: 0.93rem;
+           line-height: 1.4;
+       }
+   }
+
+   @media (max-width: 400px) {
+       .about-domain {
+           margin: 24px auto 0 auto;
+           padding: 8px 2vw;
+           gap: 8px;
+       }
+
+       .about-dev, .about-project {
+           padding: 8px 1vw;
+           font-size: 0.85rem;
+       }
+
+       .about-dev h2, .about-project h2 {
+           font-size: 0.9rem;
+           margin-bottom: 4px;
+       }
+
+       .about-dev p, .about-project p {
+           font-size: 0.85rem;
+       }
+   }
