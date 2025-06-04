@@ -21,7 +21,7 @@
 .skills-buttons button:hover,
 .skills-buttons button.active {
   background: #e2fffa;
-  color: #00bcd4;
+  color: #006572;
   box-shadow: 0 4px 16px #00bcd4a0;
   transform: scale(1.08);
 }

@@ -55,7 +55,7 @@
 }
 
 .carousel-button:hover {
-  color: #00bcd4;
+  color: #006572;
   transform: scale(1.5);
 }
 
@@ -86,7 +86,7 @@
 
 .github-button:hover {
   background: white;
-  color: #00bcd4;
+  color: #006572;
   transform: scale(1.1);
   box-shadow: 0 4px 16px #00bcd4a0;
 }

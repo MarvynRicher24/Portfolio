@@ -30,7 +30,7 @@ const Contact = () => {
           </button>
         </div>
         {copySuccess && <p className="copy-success">Email copié !</p>}
-        <a href="https://linkedin.com" className="contact-link" target="_blank" rel="noopener noreferrer">
+        <a href="www.linkedin.com/in/marvyn-richer-787952298" className="contact-link" target="_blank" rel="noopener noreferrer">
           <FaLinkedin className="contact-icon" />
           Mon profil LinkedIn
         </a>

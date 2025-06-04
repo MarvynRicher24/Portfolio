@@ -185,7 +185,7 @@
 }
 
 .about-card:hover h2 {
-    color: #00bcd4;
+    color: #006572;
 }
 
 .about-card:hover p {
@@ -228,7 +228,7 @@
 
 .about-cv-btn:hover {
     background: #e2fffa;
-    color: #00bcd4;
+    color: #006572;
     box-shadow: 0 4px 16px #00bcd4a0;
     transform: scale(1.08);
 }

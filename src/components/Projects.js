@@ -2,18 +2,19 @@ import React, { useState, useRef } from 'react';
 import './Projects.css';
 import ParallaxSection from './ParallaxSection';
 import road from '../assets/road.jpg';
-import project1 from '../assets/project1.jpg';
-import project2 from '../assets/project2.jpg';
-import project3 from '../assets/project3.jpg';
+import project from '../assets/project.jpg';
+
 
 const Projects = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const carouselRef = useRef(null);
 
   const projects = [
-    { image: project1, title: 'Projet 1', link: 'https://github.com/projet1' },
-    { image: project2, title: 'Projet 2', link: 'https://github.com/projet2' },
-    { image: project3, title: 'Projet 3', link: 'https://github.com/projet3' },
+    { image: project, title: 'Projet 1', link: 'https://github.com/MarvynRicher24/NewesOnline' },
+    { image: project, title: 'Projet 2', link: 'https://github.com/MarvynRicher24/Application-planification-map' },
+    { image: project, title: 'Projet 3', link: 'https://github.com/MarvynRicher24/KeepPeek' },
+    { image: project, title: 'Projet 4', link: 'https://github.com/MarvynRicher24/Angular-Website-Project' },
+    { image: project, title: 'Projet 5', link: '#' },
   ];
 
   const handleNext = () => {

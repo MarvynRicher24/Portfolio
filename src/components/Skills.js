@@ -8,7 +8,7 @@ const Skills = () => {
 
   const skillsData = {
     'front-end': [
-      { name: 'HTML / CSS', level: '100%' },
+      { name: 'HTML / CSS', level: '85%' },
       { name: 'JavaScript / React', level: '60%' },
       { name: 'Angular / Vue.js', level: '25%' },
     ],
@@ -18,7 +18,7 @@ const Skills = () => {
       { name: 'C# / Java', level: '50%' },
     ],
     'database': [
-      { name: 'SQL / PostgreSQL', level: '60%' },
+      { name: 'SQL / PostgreSQL', level: '65%' },
       { name: 'Python / R', level: '20%' },
     ],
     'methods': [
