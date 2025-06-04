@@ -19,8 +19,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  /* Assombrit l'image pour le texte */
+  background: rgba(0, 0, 0, 0.15);
   z-index: 1;
 }
 
@@ -28,7 +27,7 @@
   position: relative;
   z-index: 2;
   animation: fadeIn 1.5s ease-in-out;
-  padding: 0 1rem; /* un peu d’air sur les côtés en mobile */
+  padding: 0 1rem;
   max-width: 100%;
 }
 
@@ -76,15 +75,14 @@
   }
 }
 
-/* Sur les écrans “étroits” (téléphones, petite tablette) */
+/* RESPONSIVE */
 @media screen and (max-width: 768px) {
   .parallax {
-    /* On peut réduire un peu la hauteur si besoin */
+    background-attachment: scroll;
     min-height: 70vh;
   }
 
   .content {
-    /* Corps de texte plus compact */
     padding: 0 1rem;
   }
 
@@ -94,7 +92,6 @@
   }
 }
 
-/* Sur écrans très petits (portrait de mobile) */
 @media screen and (max-width: 480px) {
   .parallax {
     min-height: 60vh;
