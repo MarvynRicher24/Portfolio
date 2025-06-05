@@ -15,7 +15,6 @@ const Projects = () => {
     { image: project, title: 'Projet 1', link: 'https://github.com/MarvynRicher24/NewesOnline' },
     { image: fastplaneco, title: 'fastplaneco', link: 'https://fastplaneco.marvynricher.com' },
     { image: keeppeek, title: 'keeppeek', link: 'https://keeppeek.marvynricher.com' },
-    { image: project, title: 'Projet 4', link: 'https://github.com/MarvynRicher24/Angular-Website-Project' },
   ];
 
   const handleNext = () => {
@@ -78,7 +77,7 @@ const Projects = () => {
         rel="noopener noreferrer"
         className="github-button"
       >
-        Voir mon GitHub
+        Voir mes autres projets sur GitHub
       </a>
     </ParallaxSection>
   );

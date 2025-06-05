@@ -61,7 +61,6 @@
 }
 
 /* Responsive Skills Section */
-/* À placer à la fin de src/components/Skills.css */
 
 @media (max-width: 900px) {
   .skills-bars {

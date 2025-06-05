@@ -92,7 +92,6 @@
 }
 
 /* Responsive Projects Section : swipe sur mobile, flèches cachées */
-/* À placer à la fin de src/components/Projects.css */
 
 @media (max-width: 900px) {
   .carousel-content {
