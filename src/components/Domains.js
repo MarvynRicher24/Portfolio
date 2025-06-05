@@ -15,7 +15,7 @@ const Domains = () => {
           <div className="about-dev">
             <h2>Full Stack Développement</h2>
             <p>
-              Pendant mon cursus, j'ai appris à développer des applications, des sites web, des logiciels.
+              Pendant mon cursus, j'ai appris à développer des applications, des sites web et des logiciels.
               En plus de maîtriser certaines technologies et d'aimer en découvrir de nouvelles, je recherche toujours à améliorer mes compétences en développement.
             </p>
           </div>

@@ -25,7 +25,8 @@
    }
 
    /* Domains */
-   .about-dev, .about-project {
+   .about-dev,
+   .about-project {
        background: rgba(255, 255, 255, 0.13);
        border-radius: 18px;
        padding: 26px 22px;
@@ -50,13 +51,14 @@
    }
 
    .about-project:hover {
-    transform: scale(1.05) rotate(0.5deg);
-    box-shadow: 0 12px 40px 0 #00bcd4a0, 0 2px 16px 0 rgba(0, 0, 0, 0.10);
-    background: #e2fffa;
-    color: #222;
-}
+       transform: scale(1.05) rotate(0.5deg);
+       box-shadow: 0 12px 40px 0 #00bcd4a0, 0 2px 16px 0 rgba(0, 0, 0, 0.10);
+       background: #e2fffa;
+       color: #222;
+   }
 
-   .about-dev h2, .about-project h2 {
+   .about-dev h2,
+   .about-project h2 {
        font-size: 1.18rem;
        margin-bottom: 10px;
        letter-spacing: 1px;
@@ -64,17 +66,20 @@
        transition: color 0.25s ease;
    }
 
-   .about-dev p, .about-project p {
+   .about-dev p,
+   .about-project p {
        font-size: 1.01rem;
        line-height: 1.6;
        transition: color 0.25s ease;
    }
 
-   .about-dev:hover h2, .about-project:hover h2 {
+   .about-dev:hover h2,
+   .about-project:hover h2 {
        color: #006572;
    }
 
-   .about-dev:hover p, .about-project:hover p {
+   .about-dev:hover p,
+   .about-project:hover p {
        color: #222;
    }
 
@@ -100,7 +105,8 @@
            gap: 20px;
        }
 
-       .about-dev, .about-project {
+       .about-dev,
+       .about-project {
            background: none;
            box-shadow: none;
            border-radius: 12px;
@@ -110,12 +116,14 @@
            transition: background 0.3s, box-shadow 0.3s;
        }
 
-       .about-dev h2, .about-project h2 {
+       .about-dev h2,
+       .about-project h2 {
            font-size: 1.05rem;
            margin-bottom: 8px;
        }
 
-       .about-dev p, .about-project p {
+       .about-dev p,
+       .about-project p {
            font-size: 0.95rem;
        }
    }
@@ -133,19 +141,22 @@
            gap: 12px;
        }
 
-       .about-dev, .about-project {
+       .about-dev,
+       .about-project {
            padding: 12px 1.5vw;
            font-size: 0.93rem;
            border-radius: 6px;
            border: 1px solid rgba(226, 255, 250, 0.08);
        }
 
-       .about-dev h2, .about-project h2 {
+       .about-dev h2,
+       .about-project h2 {
            font-size: 0.95rem;
            margin-bottom: 6px;
        }
 
-       .about-dev p, .about-project p {
+       .about-dev p,
+       .about-project p {
            font-size: 0.93rem;
            line-height: 1.4;
        }
@@ -158,17 +169,20 @@
            gap: 8px;
        }
 
-       .about-dev, .about-project {
+       .about-dev,
+       .about-project {
            padding: 8px 1vw;
            font-size: 0.85rem;
        }
 
-       .about-dev h2, .about-project h2 {
+       .about-dev h2,
+       .about-project h2 {
            font-size: 0.9rem;
            margin-bottom: 4px;
        }
 
-       .about-dev p, .about-project p {
+       .about-dev p,
+       .about-project p {
            font-size: 0.85rem;
        }
    }

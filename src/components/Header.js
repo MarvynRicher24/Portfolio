@@ -4,6 +4,7 @@ import './Header.css';
 const navLinks = [
   { label: 'Accueil', id: 'home' },
   { label: 'À propos', id: 'about' },
+  { label: 'Domaines', id: 'domains' },
   { label: 'Compétences', id: 'skills' },
   { label: 'Projets', id: 'projects' },
   { label: 'Contact', id: 'contact' },
