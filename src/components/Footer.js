@@ -9,7 +9,7 @@ const Footer = () => {
   return (
     <footer className="footer">
       <div className="footer-content">
-        <p>©2025 Marvyn Richer</p>
+        <p>©2026 Marvyn Richer</p>
 
         <button className="back-to-top" onClick={scrollToTop}>
           ↑

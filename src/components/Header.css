@@ -22,7 +22,7 @@
 }
 
 .header-logo:hover {
-  color: #006572;
+  color: #00b5cd;
 }
 
 .header-nav {
@@ -55,7 +55,7 @@
 }
 
 .nav-link:hover {
-  color: #006572;
+  color: #00b5cd;
 }
 
 .nav-link:hover::after {

@@ -2,9 +2,10 @@ import React, { useState, useRef } from 'react';
 import './Projects.css';
 import ParallaxSection from './ParallaxSection';
 import road from '../assets/road.jpg';
-import project from '../assets/project.jpg';
-import keeppeek from '../assets/keeppeek.jpg';
+import notymovy from '../assets/notymovy.png';
+import keeppeek from '../assets/keeppeek.png';
 import fastplaneco from '../assets/fastplaneco.jpg';
+import restosearch from '../assets/restosearch.png';
 
 
 const Projects = () => {
@@ -12,9 +13,10 @@ const Projects = () => {
   const carouselRef = useRef(null);
 
   const projects = [
-    { image: project, title: 'Projet 1', link: 'https://github.com/MarvynRicher24/NewesOnline' },
+    { image: notymovy, title: 'notymovy', link: 'https://notymovy.marvynricher.com/' },
     { image: fastplaneco, title: 'fastplaneco', link: 'https://fastplaneco.marvynricher.com' },
-    { image: keeppeek, title: 'keeppeek', link: 'https://keeppeek.marvynricher.com' },
+    { image: restosearch, title: 'restosearch', link: 'https://restosearch.marvynricher.com/' },
+    { image: keeppeek, title: 'keeppeek', link: 'https://keeppeek.marvynricher.com' }
   ];
 
   const handleNext = () => {

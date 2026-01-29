@@ -7,23 +7,10 @@ const Skills = () => {
   const [activeCategory, setActiveCategory] = useState('front-end');
 
   const skillsData = {
-    'front-end': [
-      { name: 'HTML / CSS', level: '85%' },
-      { name: 'JavaScript / React', level: '60%' },
-      { name: 'Angular / Vue.js', level: '25%' },
-    ],
-    'back-end': [
-      { name: 'PHP / Laravel', level: '50%' },
-      { name: 'Nodejs', level: '30%' },
-      { name: 'C# / Java', level: '50%' },
-    ],
-    'database': [
-      { name: 'SQL / PostgreSQL', level: '65%' },
-      { name: 'Python / R', level: '20%' },
-    ],
-    'methods': [
-      { name: 'Scrum / Kanban', level: '75%' },
-    ],
+    'front-end': ['HTML5/CSS3', 'JavaScript', 'React', 'Angular', 'Vue.js'],
+    'back-end': ['PHP (Laravel)', 'Nodejs', 'Java', 'Python'],
+    'database': ['SQL (PostgreSQL, MySQL)', 'Administration de bases de données', 'UML/Merise'],
+    'methods': ['Docker (Containerisation)', 'Git (versionning)', 'Méthodes Agile (SCRUM, Kanban)'  ],
   };
 
   return (
@@ -34,34 +21,31 @@ const Skills = () => {
           className={activeCategory === 'front-end' ? 'active' : ''}
           onClick={() => setActiveCategory('front-end')}
         >
-          Front-End
+          FRONT-END
         </button>
         <button
           className={activeCategory === 'back-end' ? 'active' : ''}
           onClick={() => setActiveCategory('back-end')}
         >
-          Back-End
+          BACK-END
         </button>
         <button
           className={activeCategory === 'database' ? 'active' : ''}
           onClick={() => setActiveCategory('database')}
         >
-          Base de données
+          DONNÉES & SYSTÈMES
         </button>
         <button
           className={activeCategory === 'methods' ? 'active' : ''}
           onClick={() => setActiveCategory('methods')}
         >
-          Méthodes
+          OUTILS & WORKFLOW
         </button>
       </div>
-      <div className="skills-bars">
+      <div className="skills-bubbles">
         {skillsData[activeCategory].map((skill, index) => (
-          <div key={index} className="skill">
-            <span>{skill.name}</span>
-            <div className="bar-container">
-              <div className="bar" style={{ width: skill.level }}></div>
-            </div>
+          <div key={index} className="tech-bubble">
+            {skill}
           </div>
         ))}
       </div>

@@ -1,3 +1,27 @@
+.tech-bubble {
+  background: rgba(255, 255, 255, 0.18);
+  color: white;
+  font-weight: 600;
+  font-size: 18px;
+  border-radius: 18px;
+  padding: 14px 28px;
+  margin: 10px 10px 0 0;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.18);
+  border: 1.5px solid rgba(0,188,212,0.18);
+  letter-spacing: 0.5px;
+  backdrop-filter: blur(8px) saturate(180%);
+  -webkit-backdrop-filter: blur(8px) saturate(180%);
+  transition: background 0.2s, color 0.2s, transform 0.2s, border 0.2s, box-shadow 0.2s;
+  display: inline-block;
+  overflow: hidden;
+}
+.tech-bubble:hover {
+  background: rgba(0,188,212,0.22);
+  color: #fff;
+  border: 1.5px solid #00bcd4;
+  transform: translateY(-4px) scale(1.08);
+  box-shadow: 0 12px 32px #00bcd4a0;
+}
 /* Section globale */
 .skills-buttons {
   display: flex;
@@ -26,44 +50,39 @@
   transform: scale(1.08);
 }
 
-.skills-bars {
+.skills-bubbles {
   display: flex;
-  flex-direction: column;
-  gap: 15px;
-  width: 80%;
-  margin: 0 auto;
+  flex-wrap: wrap;
+  gap: 18px;
+  justify-content: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 
-.skill {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  color: white;
+.skill-bubble {
+  background: linear-gradient(135deg, #e2fffa 60%, #00bcd4 100%);
+  color: #006572;
+  font-weight: bold;
+  font-size: 16px;
+  border-radius: 50px;
+  padding: 18px 32px;
+  box-shadow: 0 2px 12px #00bcd4a0;
+  transition: transform 0.2s, box-shadow 0.2s;
+  margin: 0 5px 10px 0;
+  border: 2px solid #e2fffa;
 }
-
-.skill span {
-  font-size: 14px;
-  margin-bottom: 5px;
-}
-
-.bar-container {
-  width: 100%;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 10px;
-  overflow: hidden;
-  height: 20px;
-}
-
-.bar {
-  height: 100%;
-  background: linear-gradient(90deg, #e2fffa, #00bcd4);
-  transition: width 0.5s ease;
+.skill-bubble:hover {
+  transform: scale(1.08);
+  box-shadow: 0 6px 24px #00bcd4a0;
+  background: linear-gradient(135deg, #00bcd4 60%, #e2fffa 100%);
+  color: #fff;
 }
 
 /* Responsive Skills Section */
 
+
 @media (max-width: 900px) {
-  .skills-bars {
+  .skills-bubbles {
     width: 98%;
     gap: 20px;
   }
@@ -82,8 +101,9 @@
   }
 }
 
+
 @media (max-width: 600px) {
-  .skills-bars {
+  .skills-bubbles {
     width: 100%;
     gap: 20px;
   }
