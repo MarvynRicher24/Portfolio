@@ -2,7 +2,6 @@ import React, { useState, useRef } from 'react';
 import './Projects.css';
 import ParallaxSection from './ParallaxSection';
 import road from '../assets/road.jpg';
-import notymovy from '../assets/notymovy.png';
 import keeppeek from '../assets/keeppeek.png';
 import fastplaneco from '../assets/fastplaneco.jpg';
 import restosearch from '../assets/restosearch.png';
@@ -13,7 +12,6 @@ const Projects = () => {
   const carouselRef = useRef(null);
 
   const projects = [
-    { image: notymovy, title: 'notymovy', link: 'https://notymovy.marvynricher.com/' },
     { image: fastplaneco, title: 'fastplaneco', link: 'https://fastplaneco.marvynricher.com' },
     { image: restosearch, title: 'restosearch', link: 'https://restosearch.marvynricher.com/' },
     { image: keeppeek, title: 'keeppeek', link: 'https://keeppeek.marvynricher.com' }
